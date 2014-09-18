@@ -3,24 +3,139 @@
 @import '../../bower_components/neat/app/assets/stylesheets/neat';
 
 // Custom Styles
+
+
+// OpenTable Color Palette
+$black: #1B1B1B;
+$darkgrey: #61605F;
+$lightgrey: #B5A3A2;
+$red: #D83946;
+$mutedred: #CC4A52; 
+$brownred: #54292E;
+$lightbrown: #AD8B78;
+
+@mixin border {
+  border: solid 1px black;
+}
+
+$mobile: new-breakpoint(max-width 800px);
+
+@mixin box {
+  @include span-columns (4);
+  @include border;
+  @include omega;
+  border: solid 1px red;
+  height: 250px;
+  margin-left: 12px;
+  margin-top: 12px;
+  @include media($mobile) {
+    @include span-columns (12);
+  }
+}
+
+
 body {
   background: #fafafa;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #333;
 }
 
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-  h1 {
-    font-size: 60px;
-    line-height: 1;
-    letter-spacing: -1px;
+header {
+  width: 100%;
+  background-color: $red;
+  .headerinner {
+    @include outer-container;
+    height: 75px;
+    @include border;
+    .coname {
+      color: white;
+      font-size: 25px;
+    }
   }
 }
+
+.welcome {
+  width: 100%;
+  @include border;
+  .hero-unit {
+    @include outer-container;
+    @include border;
+    height: 400px;
+    .herotext {
+      @include border;
+      width: 100%;
+      height: 300px;
+      text-align: center;
+      margin-top: 100px;
+      h1 {
+        font-size: 60px;
+      }
+    }
+  }
+}
+
+.foodcatagories {
+  @include outer-container;
+  @include border;
+  .box {
+    @include box;
+  }
+  .boxtwo {
+    @include box;
+  }
+  .boxthree {
+    @include box;
+  }
+  .boxfour {
+    @include box;
+  }
+  .boxfive {
+    @include box;
+  }
+  .boxsix {
+    @include box;
+  }
+  .boxseven {
+    @include box;
+  }
+  .boxeight {
+    @include box;
+  }
+  .boxnine {
+    @include box;
+  }
+  
+  // .block {
+  //   @include span-columns(6);
+  //   @include border;
+  //   height: 100px;
+  // }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -28,6 +28,7 @@ $mobile: new-breakpoint(max-width 800px);
   height: 250px;
   margin-left: 12px;
   margin-top: 12px;
+  text-align: center;
   @include media($mobile) {
     @include span-columns (12);
   }
@@ -77,31 +78,31 @@ header {
 .foodcatagories {
   @include outer-container;
   @include border;
-  .box {
+  .steak {
     @include box;
   }
-  .boxtwo {
+  .seafood {
     @include box;
   }
-  .boxthree {
+  .americana {
     @include box;
   }
-  .boxfour {
+  .asian {
     @include box;
   }
-  .boxfive {
+  .mexican {
     @include box;
   }
-  .boxsix {
+  .italian {
     @include box;
   }
-  .boxseven {
+  .vegetarian {
     @include box;
   }
-  .boxeight {
+  .sushi {
     @include box;
   }
-  .boxnine {
+  .drink {
     @include box;
   }
   

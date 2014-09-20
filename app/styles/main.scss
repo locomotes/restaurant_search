@@ -22,9 +22,8 @@ $mobile: new-breakpoint(max-width 800px);
 
 @mixin box {
   @include span-columns (4);
-  @include border;
+  // @include border;
   @include omega;
-  border: solid 1px red;
   height: 250px;
   margin-left: 12px;
   margin-top: 12px;
@@ -43,14 +42,25 @@ body {
 
 header {
   width: 100%;
-  background-color: $red;
+  background-color: $mutedred;
   .headerinner {
     @include outer-container;
-    height: 75px;
-    @include border;
-    .coname {
-      color: white;
-      font-size: 25px;
+    height: 95px;
+    .home {
+      height: 75px;
+      background: none;
+      margin: 5px;
+      padding: 5px;
+      cursor: pointer;
+      border: none;
+      border-radius: 25px;
+      .coname {
+        color: white;
+        font-size: 20px;
+      }
+    }
+    .home:hover {
+      background-color: $black;
     }
   }
 }
@@ -58,18 +68,22 @@ header {
 .welcome {
   width: 100%;
   @include border;
+  background-image: url(../images/brickone.jpg);
+  color: white;
+  border-bottom: 25px solid $black;
   .hero-unit {
     @include outer-container;
-    @include border;
+    // @include border;
     height: 400px;
     .herotext {
-      @include border;
+      // @include border;
       width: 100%;
       height: 300px;
       text-align: center;
       margin-top: 100px;
       h1 {
         font-size: 60px;
+        margin-top: 85px;
       }
     }
   }
@@ -77,7 +91,7 @@ header {
 
 .foodcatagories {
   @include outer-container;
-  @include border;
+  // @include border;
   .steak {
     @include box;
   }

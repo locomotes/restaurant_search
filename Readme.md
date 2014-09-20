@@ -21,3 +21,8 @@ http://thenounproject.com/term/pizza/41603/
 Cauliflower Icon by Yi Chen:
 http://thenounproject.com/term/cauliflower/62628/
 
+beverages Icon by Gabriele Malaspina:
+http://thenounproject.com/term/beverages/62246/
+
+
+

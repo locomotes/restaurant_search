@@ -43,37 +43,56 @@
         </div>
     </div>
 
-    <div class="foodcatagories">
 
-        <div class="steak">
-            <img src="../images/steak.svg" alt="Steakhouses" height="250" width="250">
-        </div>
-        <div class="seafood">
-            <img src="../images/fish.svg" alt="Seafood" height="250" width="250">
-        </div>
-        <div class="americana">
-            <img src="../images/americana.svg" alt="Americana" height="200" width="200">
-        </div>
-        <div class="asian">
-            <img src="../images/asian.svg" alt="Asian Cusisine" height="200" width="200">
-        </div>
-        <div class="mexican">
-            <img src="../images/mexican.svg" alt="Mexican Cusisine" height="200" width="200">
-        </div>
-        <div class="italian">
-            <img src="../images/pizza.svg" alt="Italian Cusisine" height="200" width="200">
-        </div>
-        <div class="vegetarian">
-            <img src="../images/veg.svg" alt="Vegetarian Cusisine" height="200" width="200">
-        </div>
-        <div class="sushi">
-            <img src="../images/sushi.svg" alt="Americana" height="200" width="200">
-        </div>
-        <div class="drink">
-            <img src="../images/drink.svg" alt="drinks" height="200" width="200">
-        </div>
 
+    <div id="main">
+        
     </div>
+
+
+
+    <script type="text/x-handlebar-template" id="food">
+
+        <div class="foodcatagories">
+        
+            <div class="steak">
+                <button class="foodbuttons steakbutton">
+                    <img src="../images/steak.svg" alt="Steakhouses" height="250" width="250">
+                </button>
+            </div>
+            <div class="seafood">
+                <img src="../images/fish.svg" alt="Seafood" height="250" width="250">
+            </div>
+            <div class="americana">
+                <img src="../images/americana.svg" alt="Americana" height="200" width="200">
+            </div>
+            <div class="asian">
+                <img src="../images/asian.svg" alt="Asian Cusisine" height="200" width="200">
+            </div>
+            <div class="mexican">
+                <img src="../images/mexican.svg" alt="Mexican Cusisine" height="200" width="200">
+            </div>
+            <div class="italian">
+                <img src="../images/pizza.svg" alt="Italian Cusisine" height="200" width="200">
+            </div>
+            <div class="vegetarian">
+                <img src="../images/veg.svg" alt="Vegetarian Cusisine" height="200" width="200">
+            </div>
+            <div class="sushi">
+                <img src="../images/sushi.svg" alt="Americana" height="200" width="200">
+            </div>
+            <div class="drink">
+                <img src="../images/drink.svg" alt="drinks" height="200" width="200">
+            </div>
+
+        </div>
+
+    </script>
+
+
+    <script type="text/x-handlebar-template" id="map">
+
+    </script>
 
 
     <!-- build:js scripts/vendor.js -->
@@ -85,8 +104,9 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
-        <script src="scripts/routes/routes.js"></script>
+        <script src="scripts/view/restaurants_view.js"></script>
         <script src="scripts/view/main_view.js"></script>
+        <script src="scripts/routes/routes.js"></script>
         <script src="scripts/model/model.js"></script>
         <script src="scripts/main.js"></script>
         <!-- endbuild -->

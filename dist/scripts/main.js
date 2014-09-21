@@ -1,53 +1,75 @@
-var Router = Backbone.Router.Extend ({
+
+
+var RestaurantList = Backbone.View.extend({
+
+	events: {
+
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+		console.log("I'm in restaurant view render function");
+		var source = $("#map").html();
+		this.$el.html(source);
+
+		return this;
+	}
+
+});
+
+
+var FoodList = Backbone.View.extend({
+
+	events: {
+
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+		console.log("I'm in main view render function");
+		var source = $("#food").html();
+		this.$el.html(source);
+
+		return this;
+	}
+
+});
+
+
+var Router = Backbone.Router.extend ({
+
 	routes: {
 		"": "main_page",
 		"restaurants": "restaurants_page"
 	},
 
-	initialize: function () {
 
+	initialize: function () {
+		
 	},
 
+
 	main_page: function () {
-		// console.log("loaded main page");
+		console.log("loaded main page");
+		var food = new FoodList();
+		$('#main').html(food.el);
 	},
 
 	restaurants_page: function () {
-		// console.log("loaded restaurants page");
+		console.log("loaded restaurants page");
+		var restaurants = new RestaurantList();
+		$('#main').html(restaurants.el);
 	}
 
 });
 
-var router = new Router() {
-	router.on(route:main_page, function () {
-		console.log("loaded main page");
-	});
-}
 
-Backbone.history.start();
-// var videoView = Backbone.View.extend({
-// 	template: function(model) {
-// 		return _.template($('#vid_stream').html());
-// 	},
-
-// 	el: $('#hero-unit ul'),
-
-// 	initialize: function(){
-// 		this.render(); 
-// 	},
-
-// 	render: function(){
-// 		this.$el.html(this.template(this.collection))
-// 	}
-
-// });
-
-// all.fetch().done(function(){
-// 	new videoView({collection: all})
-
-
-
-// });
 // var Video = Backbone.Model.extend ({
 // 	defaults: {
 // 		title: '',
@@ -96,6 +118,13 @@ Backbone.history.start();
 // })
 
 
+
+var router = new Router();
+Backbone.history.start();
+
+
+
+
 var today = new Date();
 var hourNow = today.getHours();
 var greeting;
@@ -117,5 +146,15 @@ $("h1").prepend(greeting);
 
 $("h2").append(geoplugin_city() + ", " + geoplugin_region() + ", " + geoplugin_countryName());
 
+
+$('.home').on('click', function () {
+	router.navigate("", {trigger: true});
+	console.log("navigated home");
+});
+
+$('.steakbutton').on('click', function () {
+	router.navigate("restaurants", {trigger: true});
+	console.log("button clicked");
+});
 
 

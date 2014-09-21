@@ -119,7 +119,17 @@ header {
   .drink {
     @include box;
   }
+
+
+  .foodbuttons {
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
   
+  .foodbuttons:hover {
+    background-color: #F3F4F7;
+  }
   // .block {
   //   @include span-columns(6);
   //   @include border;

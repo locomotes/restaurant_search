@@ -1,3 +1,7 @@
+var router = new Router();
+Backbone.history.start();
+
+
 
 
 var today = new Date();
@@ -21,5 +25,15 @@ $("h1").prepend(greeting);
 
 $("h2").append(geoplugin_city() + ", " + geoplugin_region() + ", " + geoplugin_countryName());
 
+
+$('.home').on('click', function () {
+	router.navigate("", {trigger: true});
+	console.log("navigated home");
+});
+
+$('.steakbutton').on('click', function () {
+	router.navigate("restaurants", {trigger: true});
+	console.log("button clicked");
+});
 
 

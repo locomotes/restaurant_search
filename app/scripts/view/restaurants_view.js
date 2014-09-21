@@ -1,6 +1,6 @@
 
 
-var FoodList = Backbone.View.extend({
+var RestaurantList = Backbone.View.extend({
 
 	events: {
 
@@ -11,8 +11,8 @@ var FoodList = Backbone.View.extend({
 	},
 
 	render: function () {
-		console.log("I'm in main view render function");
-		var source = $("#food").html();
+		console.log("I'm in restaurant view render function");
+		var source = $("#map").html();
 		this.$el.html(source);
 
 		return this;

@@ -1,9 +1,6 @@
 var router = new Router();
 Backbone.history.start();
 
-
-
-
 var today = new Date();
 var hourNow = today.getHours();
 var greeting;
@@ -31,9 +28,16 @@ $('.home').on('click', function () {
 	console.log("navigated home");
 });
 
-$('.steakbutton').on('click', function () {
-	router.navigate("restaurants", {trigger: true});
-	console.log("button clicked");
-});
+// $('.steakbutton').on('click', function () {
+// 	router.navigate("restaurants", {trigger: true});
+// 	console.log("button clicked");
+// });
 
 
+// var source = $("#map").html();
+
+var latitude = Handlebars.compile(geoplugin_latitude());
+console.log(latitude);
+
+var longitude = Handlebars.compile(geoplugin_longitude());
+console.log(longitude);

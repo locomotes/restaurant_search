@@ -3,7 +3,7 @@
 var RestaurantList = Backbone.View.extend({
 
 	events: {
-
+		"click .home": "goToHome"
 	}, 
 
 	initialize: function() {
@@ -12,10 +12,20 @@ var RestaurantList = Backbone.View.extend({
 
 	render: function () {
 		console.log("I'm in restaurant view render function");
+		$("#main").addClass("mainsize");
 		var source = $("#map").html();
 		this.$el.html(source);
 
 		return this;
+	},
+
+	goToHome: function(e) {
+		console.log('in goHome function')
+		e.preventDefault();
+		router.navigate('', {trigger: true});
+		console.log("navigated home");
+
+		$(this).trigger('reset');
 	}
 
 });
@@ -24,7 +34,7 @@ var RestaurantList = Backbone.View.extend({
 var FoodList = Backbone.View.extend({
 
 	events: {
-
+		"click .steakbutton": "goToRestaurants"
 	}, 
 
 	initialize: function() {
@@ -37,6 +47,14 @@ var FoodList = Backbone.View.extend({
 		this.$el.html(source);
 
 		return this;
+	},
+
+	goToRestaurants: function(e) {
+		e.preventDefault();
+		router.navigate("restaurants", {trigger: true});
+		console.log("button clicked");
+
+		$(this).trigger('reset');
 	}
 
 });
@@ -122,9 +140,6 @@ var Router = Backbone.Router.extend ({
 var router = new Router();
 Backbone.history.start();
 
-
-
-
 var today = new Date();
 var hourNow = today.getHours();
 var greeting;
@@ -152,9 +167,16 @@ $('.home').on('click', function () {
 	console.log("navigated home");
 });
 
-$('.steakbutton').on('click', function () {
-	router.navigate("restaurants", {trigger: true});
-	console.log("button clicked");
-});
+// $('.steakbutton').on('click', function () {
+// 	router.navigate("restaurants", {trigger: true});
+// 	console.log("button clicked");
+// });
 
 
+// var source = $("#map").html();
+
+var latitude = Handlebars.compile(geoplugin_latitude());
+console.log(latitude);
+
+var longitude = Handlebars.compile(geoplugin_longitude());
+console.log(longitude);

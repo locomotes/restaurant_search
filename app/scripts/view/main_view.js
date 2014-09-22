@@ -3,7 +3,7 @@
 var FoodList = Backbone.View.extend({
 
 	events: {
-
+		"click .steakbutton": "goToRestaurants"
 	}, 
 
 	initialize: function() {
@@ -16,6 +16,14 @@ var FoodList = Backbone.View.extend({
 		this.$el.html(source);
 
 		return this;
+	},
+
+	goToRestaurants: function(e) {
+		e.preventDefault();
+		router.navigate("restaurants", {trigger: true});
+		console.log("button clicked");
+
+		$(this).trigger('reset');
 	}
 
 });

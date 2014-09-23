@@ -1,6 +1,7 @@
 
 
-var RestaurantList = Backbone.View.extend({
+
+var MexicanList = Backbone.View.extend({
 
 	events: {
 		"click .home": "goToHome"
@@ -11,19 +12,21 @@ var RestaurantList = Backbone.View.extend({
 	},
 
 	render: function () {
-		console.log("I'm in restaurant view render function");
-		$("#main").addClass("mainsize");
-		var source = $("#map").html();
+
+		var source = $("#mexican").html();
 		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#restaurants" + ", " + "#mexican");
 
 		return this;
 	},
 
 	goToHome: function(e) {
-		console.log('in goHome function')
 		e.preventDefault();
 		router.navigate('', {trigger: true});
-		console.log("navigated home");
 
 		$(this).trigger('reset');
 	}

@@ -30,11 +30,16 @@
         <div class="hero-unit">
             <div class="herotext">
               <h1></h1>
-              <h2>Click on a category below to find a restaurant in:<br></h2>
+              <h2>Click on a category below to find a restaurant in<br></h2>
             </div>
         </div>
     </div>
 
+    <div class="searchoverview">
+        <div class="searchinner">
+            <p class="psearch"> restaurants with the tags:<br></p>
+        </div>
+    </div>
 
 
     <div id="main">
@@ -49,20 +54,32 @@
         
             <div class="steak">
                 <button class="foodbuttons steakbutton">
-                    <img src="../images/steak.svg" alt="Steakhouses" height="250" width="250">
+                    <img src="../images/steak.svg" alt="Steakhouses" height="200" width="200">
                 </button>
             </div>
+
             <div class="seafood">
-                <img src="../images/fish.svg" alt="Seafood" height="250" width="250">
+                <button class="foodbuttons seafoodbutton">
+                    <img src="../images/fish.svg" alt="Seafood" height="200" width="200">
+                </button>
             </div>
-            <div class="americana">
-                <img src="../images/americana.svg" alt="Americana" height="200" width="200">
+
+            <div class="burger">
+                <button class="foodbuttons burgerbutton">
+                    <img src="../images/americana.svg" alt="Americana" height="200" width="200">
+                </button>
             </div>
+
             <div class="asian">
-                <img src="../images/asian.svg" alt="Asian Cusisine" height="200" width="200">
+                <button class="foodbuttons asianbutton">
+                    <img src="../images/asian.svg" alt="Asian Cusisine" height="200" width="200">
+                </button>
             </div>
+
             <div class="mexican">
-                <img src="../images/mexican.svg" alt="Mexican Cusisine" height="200" width="200">
+                <button class="foodbuttons mexicanbutton">
+                    <img src="../images/mexican.svg" alt="Mexican Cusisine" height="200" width="200">
+                </button>
             </div>
             <div class="italian">
                 <img src="../images/pizza.svg" alt="Italian Cusisine" height="200" width="200">
@@ -81,19 +98,60 @@
 
     </script>
 
-
-    <script type="text/x-handlebar-template" id="map">
+    <script type="text/x-handlebar-template" id="steak">
         <iframe
           width= 100%;
           height= 500;
           frameborder="0" style="border:0"
           src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
             &q=restaurants+steak
-            &zoom=14
-            &q=loc:{{latitude}},{{longitude}}">
+            &zoom=12">
         </iframe>
     </script>
 
+    <script type="text/x-handlebar-template" id="seafood">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+seafood
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="burger">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+hamburger
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="asian">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+asian
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="mexican">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+mexican
+            &zoom=12">
+        </iframe>
+    </script>
 
     <script src="scripts/vendor.js"></script>
 

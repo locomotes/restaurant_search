@@ -1,6 +1,7 @@
 
 
-var RestaurantList = Backbone.View.extend({
+
+var MexicanList = Backbone.View.extend({
 
 	events: {
 		"click .home": "goToHome"
@@ -11,16 +12,115 @@ var RestaurantList = Backbone.View.extend({
 	},
 
 	render: function () {
-		console.log("I'm in restaurant view render function");
-		$("#main").addClass("mainsize");
-		var source = $("#map").html();
+
+		var source = $("#mexican").html();
 		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#restaurants" + ", " + "#mexican");
 
 		return this;
 	},
 
 	goToHome: function(e) {
-		console.log('in goHome function')
+		e.preventDefault();
+		router.navigate('', {trigger: true});
+
+		$(this).trigger('reset');
+	}
+
+});
+
+
+var AsianList = Backbone.View.extend({
+
+	events: {
+		"click .home": "goToHome"
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+
+		var source = $("#asian").html();
+		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#restaurants" + ", " + "#asian cuisine");
+
+		return this;
+	},
+
+	goToHome: function(e) {
+		e.preventDefault();
+		router.navigate('', {trigger: true});
+
+		$(this).trigger('reset');
+	}
+
+});
+
+
+var BurgerList = Backbone.View.extend({
+
+	events: {
+		"click .home": "goToHome"
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+
+		var source = $("#burger").html();
+		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#burger" + ", " + "#americana");
+
+		return this;
+	},
+
+	goToHome: function(e) {
+		e.preventDefault();
+		router.navigate('', {trigger: true});
+
+		$(this).trigger('reset');
+	}
+
+});
+var SeafoodList = Backbone.View.extend({
+
+	events: {
+		"click .home": "goToHome"
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+		var source = $("#seafood").html();
+		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#restaurants" + ", " + "#seafood");
+
+		return this;
+	},
+
+	goToHome: function(e) {
 		e.preventDefault();
 		router.navigate('', {trigger: true});
 		console.log("navigated home");
@@ -31,10 +131,47 @@ var RestaurantList = Backbone.View.extend({
 });
 
 
+var SteakList = Backbone.View.extend({
+
+	events: {
+		"click .home": "goToHome"
+	}, 
+
+	initialize: function() {
+		this.render();
+	},
+
+	render: function () {
+
+		var source = $("#steak").html();
+		this.$el.html(source);
+
+		$(".welcome").hide();
+		$(".searchoverview").show();
+
+		$(".psearch").append("#restaurants" + ", " + "#steak");
+
+		return this;
+	},
+
+	goToHome: function(e) {
+		e.preventDefault();
+		router.navigate('', {trigger: true});
+
+		$(this).trigger('reset');
+	}
+
+});
+
+
 var FoodList = Backbone.View.extend({
 
 	events: {
-		"click .steakbutton": "goToRestaurants"
+		"click .steakbutton": "goToSteak",
+		"click .seafoodbutton": "goToSeafood",
+		"click .burgerbutton": "goToBurger",
+		"click .asianbutton": "goToAsian",
+		"click .mexicanbutton": "goToMexican"
 	}, 
 
 	initialize: function() {
@@ -46,16 +183,43 @@ var FoodList = Backbone.View.extend({
 		var source = $("#food").html();
 		this.$el.html(source);
 
+		$(".searchoverview").hide();
+		$(".welcome").show();
+
 		return this;
 	},
 
-	goToRestaurants: function(e) {
+	goToSteak: function(e) {
 		e.preventDefault();
-		router.navigate("restaurants", {trigger: true});
-		console.log("button clicked");
+		router.navigate("steak", {trigger: true});
+		$(this).trigger('reset');
+	},
 
+	goToSeafood: function(e) {
+		e.preventDefault();
+		router.navigate("seafood", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToBurger: function(e) {
+		e.preventDefault();
+		router.navigate("burger", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToAsian: function(e) {
+		e.preventDefault();
+		router.navigate("asian", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToMexican: function(e) {
+		e.preventDefault();
+		router.navigate("mexican", {trigger: true});
 		$(this).trigger('reset');
 	}
+
+
 
 });
 
@@ -64,7 +228,11 @@ var Router = Backbone.Router.extend ({
 
 	routes: {
 		"": "main_page",
-		"restaurants": "restaurants_page"
+		"steak": "steak_page",
+		"seafood": "seafood_page",
+		"burger": "burger_page",
+		"asian": "asiancuisine_page",
+		"mexican": "mexicancuisine_page"
 	},
 
 
@@ -74,15 +242,33 @@ var Router = Backbone.Router.extend ({
 
 
 	main_page: function () {
-		console.log("loaded main page");
 		var food = new FoodList();
 		$('#main').html(food.el);
 	},
 
-	restaurants_page: function () {
-		console.log("loaded restaurants page");
-		var restaurants = new RestaurantList();
-		$('#main').html(restaurants.el);
+	steak_page: function () {
+		var steak = new SteakList();
+		$('#main').html(steak.el);
+	},
+
+	seafood_page: function () {
+		var seafood = new SeafoodList();
+		$('#main').html(seafood.el);
+	},
+
+	burger_page: function () {
+		var burger = new BurgerList();
+		$('#main').html(burger.el);
+	},
+
+	asiancuisine_page: function () {
+		var asian = new AsianList();
+		$('#main').html(asian.el);
+	},
+
+	mexicancuisine_page: function () {
+		var mexican = new MexicanList();
+		$('#main').html(mexican.el);
 	}
 
 });
@@ -161,6 +347,7 @@ $("h1").prepend(greeting);
 
 $("h2").append(geoplugin_city() + ", " + geoplugin_region() + ", " + geoplugin_countryName());
 
+$(".psearch").prepend(geoplugin_city() + ", " + geoplugin_region());
 
 $('.home').on('click', function () {
 	router.navigate("", {trigger: true});
@@ -173,10 +360,8 @@ $('.home').on('click', function () {
 // });
 
 
-// var source = $("#map").html();
+// // var source = $("#map").html();
 
-var latitude = Handlebars.compile(geoplugin_latitude());
-console.log(latitude);
+// var latitude = Handlebars.compile(geoplugin_latitude());
 
-var longitude = Handlebars.compile(geoplugin_longitude());
-console.log(longitude);
+// var longitude = Handlebars.compile(geoplugin_longitude());

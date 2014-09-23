@@ -99,7 +99,7 @@ header {
   .seafood {
     @include box;
   }
-  .americana {
+  .burger {
     @include box;
   }
   .asian {
@@ -139,9 +139,20 @@ header {
   // }
 }
 
-.mainsize {
+// .mainsize {
+//   width: 100%;
+//   height: 500px;
+// }
+
+.searchoverview {
   width: 100%;
-  height: 500px;
+  background-color: $black;
+  .searchinner {
+    @include outer-container;
+    height: 200px;
+    border: solid 1px white;
+    color: white;
+  }
 }
 
 

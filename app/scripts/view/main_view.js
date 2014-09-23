@@ -3,7 +3,11 @@
 var FoodList = Backbone.View.extend({
 
 	events: {
-		"click .steakbutton": "goToRestaurants"
+		"click .steakbutton": "goToSteak",
+		"click .seafoodbutton": "goToSeafood",
+		"click .burgerbutton": "goToBurger",
+		"click .asianbutton": "goToAsian",
+		"click .mexicanbutton": "goToMexican"
 	}, 
 
 	initialize: function() {
@@ -15,15 +19,42 @@ var FoodList = Backbone.View.extend({
 		var source = $("#food").html();
 		this.$el.html(source);
 
+		$(".searchoverview").hide();
+		$(".welcome").show();
+
 		return this;
 	},
 
-	goToRestaurants: function(e) {
+	goToSteak: function(e) {
 		e.preventDefault();
-		router.navigate("restaurants", {trigger: true});
-		console.log("button clicked");
+		router.navigate("steak", {trigger: true});
+		$(this).trigger('reset');
+	},
 
+	goToSeafood: function(e) {
+		e.preventDefault();
+		router.navigate("seafood", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToBurger: function(e) {
+		e.preventDefault();
+		router.navigate("burger", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToAsian: function(e) {
+		e.preventDefault();
+		router.navigate("asian", {trigger: true});
+		$(this).trigger('reset');
+	},
+
+	goToMexican: function(e) {
+		e.preventDefault();
+		router.navigate("mexican", {trigger: true});
 		$(this).trigger('reset');
 	}
+
+
 
 });

@@ -89,17 +89,29 @@
                     <img src="../images/mexican.svg" alt="Mexican Cusisine" height="200" width="200">
                 </button>
             </div>
+
             <div class="italian">
-                <img src="../images/pizza.svg" alt="Italian Cusisine" height="200" width="200">
+                <button class="foodbuttons pizzabutton">
+                    <img src="../images/pizza.svg" alt="Italian Cusisine" height="200" width="200">
+                </button>
             </div>
+
             <div class="vegetarian">
-                <img src="../images/veg.svg" alt="Vegetarian Cusisine" height="200" width="200">
+                <button class="foodbuttons vegetarianbutton">
+                    <img src="../images/veg.svg" alt="Vegetarian Cusisine" height="200" width="200">
+                </button>
             </div>
+
             <div class="sushi">
-                <img src="../images/sushi.svg" alt="Americana" height="200" width="200">
+                <button class="foodbuttons sushibutton">
+                    <img src="../images/sushi.svg" alt="Americana" height="200" width="200">
+                </button>
             </div>
+
             <div class="drink">
-                <img src="../images/drink.svg" alt="drinks" height="200" width="200">
+                <button class="foodbuttons barbutton">
+                    <img src="../images/drink.svg" alt="drinks" height="200" width="200">
+                </button>
             </div>
 
         </div>
@@ -161,6 +173,50 @@
         </iframe>
     </script>
 
+    <script type="text/x-handlebar-template" id="pizza">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+pizza
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="vegetarian">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+vegetarian
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="sushi">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=restaurants+sushi
+            &zoom=12">
+        </iframe>
+    </script>
+
+    <script type="text/x-handlebar-template" id="bar">
+        <iframe
+          width= 100%;
+          height= 500;
+          frameborder="0" style="border:0"
+          src="https://www.google.com/maps/embed/v1/search?key=AIzaSyCjIhX1AwD4Ec-Rl-U3zTounUHOqS6w6lI
+            &q=bars+pubs
+            &zoom=12">
+        </iframe>
+    </script>
+
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -171,6 +227,10 @@
     <!-- endbuild -->
 
         <!-- build:js scripts/main.js -->
+        <script src="scripts/view/bar_view.js"></script>
+        <script src="scripts/view/sushi_view.js"></script>
+        <script src="scripts/view/vegetarian_view.js"></script>
+        <script src="scripts/view/pizza_view.js"></script>
         <script src="scripts/view/mexicancuisine_view.js"></script>
         <script src="scripts/view/asiancuisine_view.js"></script>
         <script src="scripts/view/burger_view.js"></script>

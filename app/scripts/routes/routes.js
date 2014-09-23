@@ -8,7 +8,11 @@ var Router = Backbone.Router.extend ({
 		"seafood": "seafood_page",
 		"burger": "burger_page",
 		"asian": "asiancuisine_page",
-		"mexican": "mexicancuisine_page"
+		"mexican": "mexicancuisine_page",
+		"pizza": "pizza_page",
+		"vegetarian": "vegetarian_page",
+		"sushi": "sushi_page",
+		"bar": "bar_page"
 	},
 
 
@@ -45,6 +49,26 @@ var Router = Backbone.Router.extend ({
 	mexicancuisine_page: function () {
 		var mexican = new MexicanList();
 		$('#main').html(mexican.el);
+	},
+
+	pizza_page: function () {
+		var pizza = new PizzaList();
+		$('#main').html(pizza.el);
+	},
+
+	vegetarian_page: function () {
+		var vege = new VegetarianList();
+		$('#main').html(vege.el);
+	},
+
+	sushi_page: function () {
+		var sushi = new SushiList();
+		$('#main').html(sushi.el);
+	},
+
+	bar_page: function () {
+		var bar = new BarList();
+		$('#main').html(bar.el);
 	}
 
 });

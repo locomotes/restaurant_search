@@ -26,7 +26,6 @@ $(".psearch").prepend(geoplugin_city() + ", " + geoplugin_region());
 
 $('.home').on('click', function () {
 	router.navigate("", {trigger: true});
-	console.log("navigated home");
 });
 
 // $('.steakbutton').on('click', function () {
